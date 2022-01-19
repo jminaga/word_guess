@@ -2,10 +2,26 @@ const startBox = document.querySelector("#start-box");
 const startButton = document.querySelector("#start-button");
 const timer = document.querySelector("#timer");
 const timerBox = document.querySelector("#timer-box")
+const words = document.querySelector("#words");
+
+const wordBank = ["dog", "cat", "fish", "cow", "bird", "bug"]
+const result = [];
+
+
+for (var i = 0; i < wordBank.length; i++) {
+    let choices =
+      wordBank[Math.floor(Math.random() * wordBank.length)];
+    result.push(choices);
+    console.log(result[0])
+  }
+
+if (result[0].includes("c","a","t")){
+    console.log("yes")
+} else {console.log("no")}
+
+
 
 let secondsLeft = 30;
-
-// Start Game
 
 // Timer Start
 
@@ -31,5 +47,8 @@ const gameStart = () => {
     setTime()
   });
 };
+
+
+
 
 gameStart();
