@@ -1,0 +1,49 @@
+h1 {
+  margin-top: 25px;
+  color: rgb(32, 79, 232);
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;width: 100%;
+
+}
+
+.button {
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+
+  width: 20%;
+}
+
+/* Start Box */
+
+#start-box {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  height: 168px;
+  margin-top: 25px;
+  border-radius: 3px;
+}
+
+/* Timer */
+
+#timer-box {
+  display: flex;
+  justify-content: flex-end;
+  justify-content: space-between;
+  border: 1px solid black;
+  height: 168px;
+  margin-top: 25px;
+  border-radius: 3px;
+  display: none;
+}
