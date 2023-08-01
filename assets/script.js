@@ -14,18 +14,39 @@ let wordChoice = ""
 
 
 // Creates blank spaces and renders to section
+// const renderBlanks = () => {
+//   wordChoice = wordBank[Math.floor(Math.random() * wordBank.length)];
+//   choiceLetters = wordChoice.split("")
+//   numberOfBlanks = choiceLetters.length
+//   blankArray = []
+//   for (let i = 0; i < numberOfBlanks; i++){
+//     blankArray.push("_")
+//   }
+//   placeHolder.textContent = blankArray.join(" ")
+//   console.log(wordChoice)
+//   console.log(blankArray)
+// }  
+
 const renderBlanks = () => {
+  // Generates random word from word bank
   wordChoice = wordBank[Math.floor(Math.random() * wordBank.length)];
-  choiceLetters = wordChoice.split("")
-  numberOfBlanks = choiceLetters.length
-  blankArray = []
-  for (let i = 0; i < numberOfBlanks; i++){
-    blankArray.push("_")
+  choiceLetters = wordChoice.split("");
+
+  for (let i = 0; i < choiceLetters.length; i++) {
+    const letter = choiceLetters[i]
+    const letterPlaceHolder = document.createElement("div")
+    letterPlaceHolder.setAttribute("id", "placeHolder")
+    letterPlaceHolder.textContent = "_";
+    wordBox.append(letterPlaceHolder);
+
+console.log(letter)
+
+
   }
-  placeHolder.textContent = blankArray.join(" ")
+  console.log(choiceLetters)
+
   console.log(wordChoice)
-  console.log(blankArray)
-}  
+}
 
 const letterGuess = () => {
 
