@@ -12,6 +12,8 @@ const result = [];
 let secondsLeft = 30;
 let wordChoice = ""
 
+
+// Creates blank spaces and renders to section
 const renderBlanks = () => {
   wordChoice = wordBank[Math.floor(Math.random() * wordBank.length)];
   choiceLetters = wordChoice.split("")
@@ -25,7 +27,9 @@ const renderBlanks = () => {
   console.log(blankArray)
 }  
 
-renderBlanks()
+const letterGuess = () => {
+
+}
 
 
 // Timer Start
@@ -55,3 +59,4 @@ const gameStart = () => {
 };
 
 gameStart();
+renderBlanks()
