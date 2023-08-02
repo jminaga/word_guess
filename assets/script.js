@@ -8,27 +8,41 @@ const placeHolder = document.querySelector("#placeHolder");
 const getLetter = document.querySelector("data-palceholder");
 
 const wordBank = ["dog", "cat", "fish", "cow", "bird", "bug", "abracadbra"];
-const result = [];
+let result = [];
 
 let secondsLeft = 30;
 let wordChoice = "";
 
-
-const renderBlanks = () =>{
+const renderBlanks = () => {
   wordChoice = wordBank[Math.floor(Math.random() * wordBank.length)];
-    choiceLetters = wordChoice.split("");
-    numberOfBlanks = wordChoice.length;
-    console.log(choiceLetters)
-    console.log(numberOfBlanks)
+  choiceLetters = wordChoice.split("");
+  numberOfBlanks = wordChoice.length;
+  console.log(choiceLetters);
+  console.log(numberOfBlanks);
 
- for (var i = 0; i < numberOfBlanks; i++) {
-  result.push("_")
+  for (var i = 0; i < numberOfBlanks; i++) {
+    result.push("_");
+  }
+  wordBox.textContent = result.join(" ");
+};
 
- }
-wordBox.textContent = result.join(" ")
-console.log(result)
-}
+const checkLetter = (key) => {
+  for (i = 0; i < choiceLetters.length; i++) {
+    if (key === choiceLetters[i]) {
+      result[i] = key;
+      console.log(result[i]);
+      wordBox.textContent = result.join(" ");
+    }
+  }
+  console.log(key);
+};
 
+const keyEvent = function () {
+  document.addEventListener("keydown", function (event) {
+    let key = event.key.toLocaleLowerCase();
+    checkLetter(key);
+  });
+};
 
 // Timer Start
 
@@ -53,9 +67,9 @@ const gameStart = () => {
     wordBox.setAttribute("style", "display:flex");
     timerBox.setAttribute("style", "display:flex");
     setTime();
+    keyEvent();
   });
 };
 
 gameStart();
 renderBlanks();
-
