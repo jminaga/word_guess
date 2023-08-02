@@ -1,26 +1,36 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Kanit:ital,wght@1,300;1,800&display=swap');
+
+
+
 h1 {
   margin-top: 25px;
-  color: rgb(32, 79, 232);
+  color: rgb(69, 79, 232);
+  font-family: Kanit;
+  font-weight: 900;
+
 }
 body {
+  font-family: Arial;
+  margin: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+  background: linear-gradient(0deg, rgba(19,41,61,1) 0%, rgba(237,245,249,1) 120%);
 }
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;width: 100%;
-
-
 }
 
 .button {
   background-color: black;
   color: white;
-  border-radius: 3px;
+  border-radius: 5px;
 
   width: 20%;
 }
@@ -30,7 +40,7 @@ body {
 #start-box {
   display: flex;
   justify-content: center;
-  border: 1px solid black;
+
   height: 168px;
   margin-top: 25px;
   border-radius: 3px;
@@ -40,19 +50,24 @@ body {
 
 #timer-box {
   display: flex;
-  justify-content: flex-end;
-  justify-content: space-between;
+  justify-content: center;
   border: 1px solid black;
   height: 43px;
-  margin-top: 25px;
+  margin: auto;
+  margin-top: 50px;
   border-radius: 3px;
   display: none;
+  height: 50px;
+  width: 70px;
+  font-family: Kanit;
+ font-weight: bolder;
+ color:bisque;
 }
 
 #word-box {
   display: flex;
   justify-content: center;
-  border: 1px solid black;
+
   height: 168px;
   margin-top: 25px;
   border-radius: 3px;
@@ -60,6 +75,8 @@ body {
   flex-direction: row;
   justify-content:center;
   font-size: 40px;
+  font-family: Kanit;
+  
 
 }
 
