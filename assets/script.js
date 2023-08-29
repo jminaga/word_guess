@@ -7,7 +7,7 @@ const words = document.querySelector("#words");
 const placeHolder = document.querySelector("#placeHolder");
 const getLetter = document.querySelector("data-palceholder");
 
-const wordBank = ["dog", "cat", "fish", "cow", "bird", "bug", "abracadbra"];
+const wordBank = ["dog", "cat", "fish", "cow", "bird", "bug", "abracadabra"];
 let result = [];
 
 let secondsLeft = 30;
@@ -35,6 +35,8 @@ const checkLetter = (key) => {
     }
   }
   console.log(key);
+  gameWin();
+ 
 };
 
 const keyEvent = function () {
@@ -59,6 +61,19 @@ const setTime = () => {
   }, 1000);
 };
 
+// Determine Win or Loss
+
+const gameWin = () => {
+  
+if (wordBox.innerHTML.includes("_")) {
+  console.log("Still guessing")
+} else (showScore())
+}
+
+const showScore =()=>{
+  console.log("You Win!!")
+}
+
 // Game Start
 
 const gameStart = () => {
@@ -73,3 +88,4 @@ const gameStart = () => {
 
 gameStart();
 renderBlanks();
+
