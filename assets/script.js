@@ -6,12 +6,16 @@ const wordBox = document.querySelector("#word-box");
 const words = document.querySelector("#words");
 const placeHolder = document.querySelector("#placeHolder");
 const getLetter = document.querySelector("data-palceholder");
+const winBox = document.querySelector("#win-box");
+const scoreBox = document.querySelector("#score-box");
+
 
 const wordBank = ["dog", "cat", "fish", "cow", "bird", "bug", "abracadabra"];
 let result = [];
 
-let secondsLeft = 30;
+let secondsLeft = 5;
 let wordChoice = "";
+let win = false;
 
 const renderBlanks = () => {
   wordChoice = wordBank[Math.floor(Math.random() * wordBank.length)];
@@ -36,7 +40,6 @@ const checkLetter = (key) => {
   }
   console.log(key);
   gameWin();
- 
 };
 
 const keyEvent = function () {
@@ -54,25 +57,33 @@ const setTime = () => {
     secondsLeft--;
     timer.textContent = secondsLeft;
 
-    if (secondsLeft === 0) {
+    if (secondsLeft === 0 || win === true) {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
+    } 
+    
+    if (secondsLeft === 0 && win === false) {
+      winBox.innerHTML = "You Lose!!!"
     }
+
   }, 1000);
 };
 
 // Determine Win or Loss
 
 const gameWin = () => {
-  
-if (wordBox.innerHTML.includes("_")) {
-  console.log("Still guessing")
-} else (showScore())
-}
+  if (wordBox.innerHTML.includes("_")) {
+    console.log("Still guessing");
+  } else showScore();
+};
 
-const showScore =()=>{
-  console.log("You Win!!")
-}
+const showScore = () => {
+  win = true;
+  wordBox.setAttribute("style", "display:none;");
+  timerBox.setAttribute("style", "display:none;");
+  console.log("You Win!!");
+  winBox.innerHTML = "You Win!!!";
+};
 
 // Game Start
 
@@ -88,4 +99,3 @@ const gameStart = () => {
 
 gameStart();
 renderBlanks();
-
